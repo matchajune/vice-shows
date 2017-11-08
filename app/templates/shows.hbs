@@ -1,0 +1,17 @@
+<div class="shows">
+  {{#each model as |show|}}
+    <span {{action 'selectShow' show}}>
+      {{#link-to "shows" (query-params id=show.id)}}
+        {{show.id}}
+      {{/link-to}}
+    </span>
+  {{/each}}
+</div>
+
+<hr>
+
+<div class="show">
+  <img src={{selectedShow.product_image_url}}>
+  <div class="episode">{{selectedShow.episodes}} Episodes</div>
+  <div class="title">{{selectedShow.title}}</div>
+</div>
